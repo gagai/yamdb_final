@@ -1,22 +1,22 @@
-from django.db.models import Avg
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReadOnlyTitleSerializer,
+                             ReviewSerializer, TitleSerializer,
+                             TokenSerializer, UserEditSerializer,
+                             UserSerializer, UserSignUpSerializer)
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .mixins import ListCreateDestroyViewSet
 from .permissions import IsAdmin, IsAdminModeratorAuthorOrReadOnly, ReadOnly
-from api.serializers import (CategorySerializer, CommentSerializer,
-                             GenreSerializer, ReadOnlyTitleSerializer,
-                             ReviewSerializer, TitleSerializer,
-                             TokenSerializer, UserEditSerializer,
-                             UserSerializer, UserSignUpSerializer)
-from reviews.models import Category, Genre, Review, Title, User
 
 
 class UserViewSet(viewsets.ModelViewSet):
