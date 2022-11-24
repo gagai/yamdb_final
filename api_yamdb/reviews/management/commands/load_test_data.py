@@ -6,7 +6,6 @@ from users.models import User
 
 from api_yamdb.settings import BASE_DIR
 
-
 file_model_dict = {
     'users.csv': User,
     'category.csv': Category,
