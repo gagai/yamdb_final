@@ -1,6 +1,6 @@
 ![Workflow Status] https://github.com/gagai/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
 
-Available on http://51.250.78.241/admin/
+Available on http://51.250.78.241/
 
 # YaMDb API
 
