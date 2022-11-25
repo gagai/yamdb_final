@@ -14,7 +14,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: gagai/api_yamdb:latest
+    build: ../api_yamdb/
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
@@ -22,9 +22,8 @@ services:
       - static_value:/app/static/
       # Данные, хранящиеся в томе media_value, будут доступны в контейнере web 
       # через директорию /app/media/
-      - media_value:/app/media/
-      - templates_value:/app/templates/
- 
+      - media_value:/app/media/ 
+
     # «зависит от», 
     depends_on:
       - db
@@ -53,11 +52,6 @@ services:
       # через директорию /var/html/media/
       - media_value:/var/html/media/
 
-      - templates_value:/var/html/templates/
-
-      # - ../api_yamdb/static/redoc.yaml:/var/html/redoc/redoc.yaml
-      # - ../api_yamdb/templates/redoc.html:/var/html/redoc/redoc.html
-
     depends_on:
       # Контейнер nginx должен быть запущен после контейнера web
       - web
@@ -66,4 +60,3 @@ volumes:
   # Новые тома 
   static_value:
   media_value:
-  templates_value:
