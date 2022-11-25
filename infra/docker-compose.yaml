@@ -14,7 +14,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb/
+    image: gagai/api_yamdb:latest
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
