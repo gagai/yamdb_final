@@ -58,29 +58,29 @@ docker-compose exec web python manage.py dumpdata > fixtures.json
 ```
 
 Создать бэкап базы данных в формате dump
-'''bash
+```bash
 
 sudo docker exec -i <postgres_container_id> pg_dump postgres -U api_yamdb_user > api_yamdb_backup.dump
-'''
+```
 
 
 ### Восстановление базы данных
 
 Сохранить бэкап в контейнере
-'''bash
+```bash
 sudo docker exec <postgres_container_id> mkdir backup
 sudo docker cp api_yamdb_backup.dump 012852fadd52:backup
-'''
+```
 
 Создать новую базу данных
-'''bash
+```bash
 sudo docker exec -i <postgres_container_id> psql -c 'CREATE DATABASE api_yamdb_2;' -U api_yamdb_user
-'''
+```
 
 Загрузить бэкап в новую базу данных
-'''bash
+```bash
 sudo docker exec -i <postgres_container_id> psql -d api_yamdb_2 -f backup/api_yamdb_backup.dump -U api_yamdb_user
-'''
+```
 
 ---
 ## Алгоритм регистрации пользователей
