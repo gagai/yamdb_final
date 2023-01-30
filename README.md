@@ -1,4 +1,4 @@
-![Workflow Status] https://github.com/gagai/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+![Workflow Status](https://github.com/gagai/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # YaMDb API
 
