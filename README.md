@@ -13,12 +13,14 @@
 
 Создайте файл .env в папке infra и заполните его по схеме:
 
+```
 DB_ENGINE=<путь до базы данных (по умолчанию - django.db.backends.postgresql)>
 DB_NAME=<название БД>
 POSTGRES_USER=<имя пользователя>
 POSTGRES_PASSWORD=<пароль>
 DB_HOST=<хост>
 DB_PORT=<порт для подключения к БД>
+```
 
 ---
 ## Установка
